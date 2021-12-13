@@ -7,7 +7,7 @@ import wfdb
 import codecs
 
 class ReadFile:
-    def __init__(self,ReadFile_log):
+    def __init__(self, ReadFile_log):
         self.ReadFile_log = ReadFile_log
         # self.ReadFile_log('开始读取文件数据')
 
@@ -137,14 +137,14 @@ class ReadFile:
         last_dict = all_data[len(all_data) - 1]
         startTime = zero_dict['recordTime']
         endTime = last_dict['recordTime']
-        #云端接收时间分析
+        # 云端接收时间分析
         min_receive = 0
         max_receive = 0
-        #lead off统计
+        # lead off统计
         last_lead_status = 1
         lead_off_count = 0
         lead_off_time_set = []
-        #用于体温的分钟接收率
+        # 用于体温的分钟接收率
         record_minute = startTime/1000/60
         miss_minute = 0
         # 丢失列表
