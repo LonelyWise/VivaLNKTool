@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+
+			.wrapper{
+				/*width: 1200px;*/
+				/*height:500px;*/
+                /*top: 20px;*/
+                /*margin-left: 1px;*/
+				background-color: green;
+				/*margin: 0 auto;  !* 居中 *!*/
+				position: relative;    /* 子绝父相 */
+                left: 0;
+                right: 0;
+				top:0;
+				bottom: 0;
+			}
+
+			.rightbox{
+				/*width: 1000px;*/
+				height: 700px;
+				background-color: #eeeeee;
+				position: absolute;
+				right: 0;
+				top:0;
+                left: 200px;
+			}
+
+
+			.leftbox{
+				width: 200px;
+				top: 0;
+				left: 0;
+				/*bottom: 0;*/
+				height: 700px;
+				background-color: #323232;
+			}
+
+
+			.leftbox ul{
+				list-style: none;
+			}
+
+			.leftbox ul li{
+				height: 50px;
+				line-height: 30px;
+			}
+
+			.leftbox a{
+				text-decoration: none;
+				color: #eeeeee;
+			}
+
+			.leftbox{
+				color:#323232;
+			}
+
+			.leftbox li p{
+				width:180px;
+				height: 30px;
+				padding-left: 20px;
+				color: #eeeeee;
+			}
+
+			.leftbox li:hover p{
+				width:180px;
+				height: 30px;
+				border: 2px solid wheat;
+				padding-left: 20px;
+				border-right:0;
+				position: relative;
+				z-index: 2; /* 这个也就相当于是权重的意思 */
+				background-color: #323232;
+			}
+
+			.submenu{
+				width:998px;
+				/*height:498px;*/
+				background-color:#eee;
+				border: 2px solid wheat;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 200px;
+				z-index: 9999;
+				display: none;
+			}
+
+			/*.leftbox li:hover div.submenu{*/
+			/*	display: none;  !* 块级元素 *!*/
+			/*}*/
+
+            a:hover{
+                color: red;
+            }
+			div.submenu a.son-a{
+				width: 140px;
+				display: inline-block;
+				color: #323232;
+			}
+
+			div.submenu button.download{
+				background-color: #4679ef;
+				border: none;
+				border-radius: 5px;
+				height: 30px;
+				width: 120px;
+			}
+
+		</style>
+	</head>
+	<body>
+
+		<div class="wrapper">
+			<div class="leftbox">
+				<img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="company_logo.png" border="0" alt="Smiley" width="180" height="50" style="left: 10px;top: 10px;position: relative;">
+				<ul>
+					<li id="li-download">
+						<p><a href="#" onclick="showDownloadPage()">vCloud数据下载</a> </p>
+<!--						<div class="submenu"><img src="血氧设计.png"/></div>-->
+
+					</li>
+					<li>
+						<p><a href="#" onclick="drawwavePage()">丢失分析及绘图</a></p>
+						<!-- <div class="submenu"><img src="img/p2.png"/></div> -->
+					</li>
+					<li>
+						<p><a href="">多设备日志分离</a> </p>
+						<div class="submenu">333</div>
+					</li>
+					<li>
+						<p><a href="">Json->MIT16</a></p>
+						<div class="submenu">4444</div>
+					</li>
+					<li>
+						<p><a href="">Json->ISHNE</a></p>
+						<div class="submenu">5555</div>
+					</li>
+					<li>
+						<p><a href="">NB->MIT16</a></p>
+						<div class="submenu">666</div>
+					</li>
+					<li>
+						<p><a href="https://www.aliyundrive.com/drive/">孕</a>/<a href="https://mbd.baidu.com/newspage/data/landingsuper?context=%7B%22nid%22%3A%22news_10087598759072455377%22%7D&n_type=0&p_from=1">婴</a>/<a href="">童</a> </p>
+<!--						<div class="submenu">7777</div>-->
+						<div class="submenu">
+								<ul>
+									<li>您好，大傻逼，快<a href="#">登陆</a><a href="#">100元注册</a></li>
+									<li><a href="#">家用电器</a>></li>
+									<li><a href="#">手机</a>/<a href="#">运营商</a>/<a href="#">数码</a></li>
+									<li><a href="#">电脑</a>/<a href="#">办公</a></li>
+									<li><a href="#">家居</a>/<a href="#">家具</a>/<a href="#">家装</a>/<a href="#">厨具</a></li>
+									<li><a href="#">男装</a>/<a href="#">女装</a>/<a href="#">童装</a>/<a href="#">内衣</a></li>
+									<li><a href="#">手机</a>/<a href="#">运营商</a>/<a href="#">数码</a></li>
+									<li><a href="#">美妆</a>/<a href="#">个护清洁</a>/<a href="#">宠物</a></li>
+									<li><a href="#">女鞋</a>/<a href="#">箱包</a>/<a href="#">钟表</a>/<a href="#">珠宝</a></li>
+									<li><a href="#">男鞋</a>/<a href="#">运动</a>/<a href="#">户外</a></li>
+									<li><a href="#">房产</a>/<a href="#">汽车</a>/<a href="#">汽车用品</a></li>
+									<li><a href="#">母婴</a>/<a href="#">玩具乐器</a></li>
+									<li><a href="#">食品</a>/<a href="#">酒类</a>/<a href="#">生鲜</a>/<a href="#">特产</a></li>
+									<li><a href="#">艺术</a>/<a href="#">礼品鲜花</a>/<a href="#">农资绿植</a></li>
+									<li><a href="#">医药保健</a>/<a href="#">计生情趣</a></li>
+									<li><a href="#">图书</a>/<a href="#">音像</a>/<a href="#">电子书</a></li>
+									<li><a href="#">机票</a>/<a href="#">酒店</a>/<a href="#">旅游</a>/<a href="#">生活</a></li>
+									<li><a href="#">理财</a>/<a href="#">众筹</a>/<a href="#">白条</a>/<a href="#">保险</a></li>
+									<li><a href="#">安装</a>/<a href="#">维修</a>/<a href="#">清洗保养</a></li>
+								</ul>
+						</div>
+					</li>
+					<li>
+						<p><a href="">家居</a>/<a href="">家纺</a>/<a href="">汽车</a> </p>
+<!--						<div class="submenu">8888</div>-->
+						<div class="submenu">
+							<h1>新闻管理</h1>
+							<ul>
+								<li>发布新闻</li>
+								<li>新闻列表</li>
+								<li>回收站</li>
+							</ul>
+							<h1>广告管理</h1>
+							<ul>
+								<li>发布新闻</li>
+								<li>新闻列表</li>
+								<li>回收站</li>
+							</ul>
+							<h1>模板管理</h1>
+							<ul>
+								<li>发布新闻</li>
+								<li>新闻列表</li>
+								<li>回收站</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="rightbox">
+
+			</div>
+			<div class="submenu" id="downloadDiv">
+				<a class="son-a">导入ID和Key:</a>
+				<input type="file" id="test-image-file">
+<!--								<div id="test-file-info" ></div>-->
+<!--							<button type="button" onclick="upload()">选择secret.txt文件导入</button>-->
+				<br>
+				<a class="son-a">设备号:</a>
+				<input type="text" placeholder="ECGRec_202003/C830001" style="height: 25px;width: 160px;">
+				<a class="son-a">eg:ECGRec_202003/C830001</a>
+				<br>
+				<a class="son-a">起始时间:</a>
+				<input type="text" placeholder="2020-4-8 15:00:00" style="height: 25px;width: 160px;">
+				<a style="width: 200px;">eg:2020-4-8 15:00:00</a>
+				<br>
+				<a class="son-a">结束时间:</a>
+				<input type="text" placeholder="2020-4-9 15:00:00" style="height: 25px;width: 160px;">
+				<a style="width: 200px;">eg:2020-4-9 15:00:00</a>
+				<br>
+				<a class="son-a">下载数据存储地址:</a>
+				<input type="text" style="height: 25px;width: 160px;">
+				<button type="button" class="download">选择下载地址</button>
+				<br>
+				<button type="button" style="background-color: #4679ef;border: none;border-radius: 5px;position: relative; height: 30px;width: 120px; left: 100px;top: 10px">开始下载分析</button>
+			</div>
+			<div class="submenu" id="drawwaveDiv">
+				<p>mit16的数据和NB的数据格式都可以直接绘制波形</p>
+				<p style="color: red;">使用文件数据分析数据完整性(云端下载的数据，手机日志数据等):</p>
+				<form action="" method="post" name="formName">
+     				是否绘制波形:
+     				<input type="checkbox" name="reading" id="read" checked value="read"><label for="read">YES</label>
+     				<br>
+     				是否合并为1个文件:
+     				<input type="checkbox" name="reading" id="read" checked value="read"><label for="read">YES</label>
+     				<br>
+     				是否分析SNR:
+     				<input type="checkbox" name="reading" id="read" checked value="read"><label for="read">YES</label>
+				</form>
+				<a href="" class=""></a>>
+
+
+			</div>
+
+		</div>
+	</body>
+	<script>
+		 window.onload = function(){
+		 	var fileInput = document.getElementById('test-image-file');
+ 			var info = document.getElementById('test-file-info');
+ 			// 监听change事件:
+ 			fileInput.addEventListener('change', function() {
+ 				// 清除背景图片:
+ 				// 检查文件是否选择:
+ 				if(!fileInput.value) {
+ 					info.innerHTML = '没有选择文件';
+ 					return;
+ 				}
+
+ 				// 获取File引用:
+ 				var file = fileInput.files[0];
+ 				console.log(file)
+ 				// 获取File信息:
+				// console.log(file)
+				// console.log(file.path)
+ 				info.innerHTML = '文件: ' + file.name + '<br>' +
+ 				'大小: ' + file.size + '<br>' +
+ 				'修改: ' + file.lastModifiedDate;
+ 				// if(file.type !== 'image/jpeg' && file.type !== 'image/png' && file.type !== 'image/gif') {
+ 				// 	alert('不是有效的图片文件!');
+ 				// 	return;
+ 				// }
+ 				// 读取文件:
+	 			var reader = new FileReader();
+
+ 				reader.onload = function(e) {
+ 					var data = e.target.result; // 'data:image/jpeg;base64,/9j/4AAQSk...(base64编码)...'
+					console.log(data);
+					info.innerHTML = data;
+ 				};
+ 				以DataURL的形式读取文件:
+ 				reader.readAsText(file,'utf-8');
+ 			});
+		 }
+		showDownloadPage();
+		function showDownloadPage() {
+		 	console.log('sssssss');
+			var downloadDiv = document.getElementById('downloadDiv');
+			var drawwaveDiv = document.getElementById('drawwaveDiv');
+			downloadDiv.style.display = 'block';
+			drawwaveDiv.style.display = 'none';
+		}
+		function drawwavePage() {
+			var downloadDiv = document.getElementById('downloadDiv');
+			var drawwaveDiv = document.getElementById('drawwaveDiv');
+			drawwaveDiv.style.display = 'block';
+			downloadDiv.style.display = 'none';
+		}
+
+	</script>
+
+</html>

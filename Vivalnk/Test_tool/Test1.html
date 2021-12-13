@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>incomingDispatches 管理</title> 
+#include("/static/my/header.html")
+<style type="text/css">
+.frm-layout{
+	width: 100%;
+	border-collapse:   separate;
+	border-spacing:   10px;
+}
+.frm-layout td.title{
+	text-align: right;
+	padding-right: 10px;
+	width: 85px;
+}
+/* 防止下拉框的下拉列表被隐藏---必须设置--- */
+.frm-layout .layui-table-cell {            overflow: visible !important;        }
+/* 使得下拉框与单元格刚好合适 */
+.frm-layout td .layui-form-select{
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+</style>
+</head>
+<body>
+ 
+	<form id="frmEdit" class="layui-form" lay-filter="frm">
+	<input type="hidden" name="id" lay-verify="" placeholder=""
+					autocomplete="off" class="layui-input" value="">
+	<table class="frm-layout" >
+		<tr>
+			<td class="title">来文单位</td>
+			<td><input type="text" name="unit" lay-verify="" placeholder=""
+					autocomplete="off" class="layui-input  " value=""></td>
+			<td class="title">来文日期</td>
+			<td style="width: 180px;"><input type="text" name="receiptDate" lay-verify="" placeholder=""
+					autocomplete="off" class="layui-input date " value=""></td>
+		</tr>
+		<tr>
+			<td class="title">来文字号</td>
+			<td><input type="text" name="name" lay-verify="" placeholder=""
+					autocomplete="off" class="layui-input  " value=""></td>
+			<td class="title">紧急程度</td>
+			<td>#(printSelectHtml("doc", "紧急程度",null,"name='level' lay-verify='' lay-search=''"))
+			</td>
+		</tr>
+		<tr>
+			<td class="title">上传文档</label></td>
+			<td ><input type="text" class="layui-input layui-disabled"   name="fileName" lay-verify="required"
+			placeholder="请点击右边按钮上传文档"			readonly="readonly" disabled
+			></td>
+			<td ><button type="button" class="layui-btn" id="docPath">上传文档</button>
+				<input type="hidden"  name="docPath" placeholder="">
+			</td>
+			<td ><button type="button" class="layui-btn layui-btn-danger" >取消上传</button></td>
+		</tr>
+		<tr>
+			<td class="title">来文标题</label></td>
+			<td colspan="3"><input type="text" name="title" lay-verify="required" placeholder=""
+					autocomplete="off" class="layui-input  " value=""></td>
+		</tr>
+		<tr>
+			<td class="title">办公室意见</td>
+			<td colspan="3"><textarea placeholder="" lay-verify="required" name="suggestion" class="layui-textarea" autocomplete="off"></textarea>
+		</tr>
+		<tr>
+			<td class="title">审核人列表</td>
+			<td colspan="3"><input type="text" name="approverList" lay-verify="" placeholder=""
+					autocomplete="off" class="layui-input  " value=""></td>
+		</tr>
+		<tr>
+			<td class="title">阅签人列表</td>
+			<td colspan="3"><input type="text" name="readerList" lay-verify="" placeholder=""
+					autocomplete="off" class="layui-input  " value=""></td>
+		</tr>
+		<tr>
+			<td colspan="4" style="text-align: center;">
+				<button id="editPageBtnId" class="layui-btn" lay-submit=""
+					lay-filter="edit-lay-filter">立即提交</button>
+				<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+			</td>
+		</tr>
+	</table>
+	</form>
+	<script type="text/javascript">
+				#include("start.js")
+	</script>
+</body>
+</html>
+

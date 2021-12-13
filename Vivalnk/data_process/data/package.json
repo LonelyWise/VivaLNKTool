@@ -1,0 +1,7 @@
+{
+  "name": "cyan",
+  "version": "1.0.0",
+  "dependencies": {
+    "result": "this is a test"
+  }
+}
